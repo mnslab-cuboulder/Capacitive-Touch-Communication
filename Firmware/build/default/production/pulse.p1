@@ -1,0 +1,225 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"14 pulse.c
+[s S1 `uc 1 `uc 1 `uc 1 `uc 1 `uc >> -> 160 `i -> 3 `i ]
+[n S1 fifo iByte iBit oByte oBit buff ]
+"24
+[c E1 0 1 .. ]
+[n E1 . OFF ON  ]
+[c E5 0 1 .. ]
+[n E5 . FAILED SUCCEED  ]
+[; ;pulse.h: 21: typedef enum{OFF=0, ON} state_t;
+[; ;pulse.h: 23: typedef enum{FAILED=0,SUCCEED} result_t;
+[; ;pulse.h: 25: result_t FF_Write(state_t x);
+[; ;pulse.h: 27: result_t FF_Read(state_t* x);
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;pulse.c: 14: typedef struct fifo{
+[; ;pulse.c: 15: uint8_t iByte;
+[; ;pulse.c: 16: uint8_t iBit;
+[; ;pulse.c: 17: uint8_t oByte;
+[; ;pulse.c: 18: uint8_t oBit;
+[; ;pulse.c: 19: uint8_t buff[(160)>>3];
+[; ;pulse.c: 20: } fifo_t;
+"22 pulse.c
+[v _FIFO `S1 ~T0 @X0 1 e ]
+[; ;pulse.c: 22: fifo_t FIFO;
+"24
+[v _FF_Write `(E5 ~T0 @X0 1 ef1`E1 ]
+{
+[; ;pulse.c: 24: result_t FF_Write(state_t x){
+[e :U _FF_Write ]
+[v _x `E1 ~T0 @X0 1 r1 ]
+[f ]
+"26
+[v _in `ui ~T0 @X0 1 a ]
+[v _out `ui ~T0 @X0 1 a ]
+[; ;pulse.c: 26: uint16_t in, out;
+[; ;pulse.c: 28: in = (FIFO.iByte<<3) + FIFO.iBit;
+"28
+[e = _in -> + << -> . _FIFO 0 `i -> 3 `i -> . _FIFO 1 `i `ui ]
+[; ;pulse.c: 29: out = (FIFO.oByte<<3) + FIFO.oBit;
+"29
+[e = _out -> + << -> . _FIFO 2 `i -> 3 `i -> . _FIFO 3 `i `ui ]
+[; ;pulse.c: 31: if((in+1)==out){
+"31
+[e $ ! == + _in -> -> 1 `i `ui _out 3  ]
+{
+[; ;pulse.c: 33: return FAILED;
+"33
+[e ) . `E5 0 ]
+[e $UE 2  ]
+"34
+}
+[; ;pulse.c: 34: }
+[e $U 4  ]
+"35
+[e :U 3 ]
+[; ;pulse.c: 35: else{
+{
+[; ;pulse.c: 37: x = x & 0x1;
+"37
+[e = _x -> & -> _x `i -> 1 `i `E1 ]
+[; ;pulse.c: 39: if(x){
+"39
+[e $ ! != -> _x `i -> -> -> 0 `i `E1 `i 5  ]
+{
+[; ;pulse.c: 40: FIFO.buff[FIFO.iByte] |= (uint8_t)(0x1<<FIFO.iBit);
+"40
+[e =| *U + &U . _FIFO 4 * -> . _FIFO 0 `ux -> -> # *U &U . _FIFO 4 `ui `ux -> << -> 1 `i . _FIFO 1 `uc ]
+"41
+}
+[; ;pulse.c: 41: }
+[e $U 6  ]
+"42
+[e :U 5 ]
+[; ;pulse.c: 42: else{
+{
+[; ;pulse.c: 43: FIFO.buff[FIFO.iByte] &= ~(uint8_t)(0x1<<FIFO.iBit);
+"43
+[e =& *U + &U . _FIFO 4 * -> . _FIFO 0 `ux -> -> # *U &U . _FIFO 4 `ui `ux -> ~ -> -> << -> 1 `i . _FIFO 1 `uc `i `uc ]
+"44
+}
+[e :U 6 ]
+[; ;pulse.c: 44: }
+[; ;pulse.c: 46: FIFO.iBit++;
+"46
+[e ++ . _FIFO 1 -> -> 1 `i `uc ]
+[; ;pulse.c: 47: if(FIFO.iBit==8){
+"47
+[e $ ! == -> . _FIFO 1 `i -> 8 `i 7  ]
+{
+[; ;pulse.c: 49: FIFO.iBit = 0;
+"49
+[e = . _FIFO 1 -> -> 0 `i `uc ]
+[; ;pulse.c: 50: FIFO.iByte++;
+"50
+[e ++ . _FIFO 0 -> -> 1 `i `uc ]
+[; ;pulse.c: 52: if(FIFO.iByte==((160)>>3)){
+"52
+[e $ ! == -> . _FIFO 0 `i >> -> 160 `i -> 3 `i 8  ]
+{
+[; ;pulse.c: 53: FIFO.iByte = 0;
+"53
+[e = . _FIFO 0 -> -> 0 `i `uc ]
+"54
+}
+[e :U 8 ]
+"55
+}
+[e :U 7 ]
+[; ;pulse.c: 54: }
+[; ;pulse.c: 55: }
+[; ;pulse.c: 57: return SUCCEED;
+"57
+[e ) . `E5 1 ]
+[e $UE 2  ]
+"58
+}
+[e :U 4 ]
+[; ;pulse.c: 58: }
+[; ;pulse.c: 59: }
+"59
+[e :UE 2 ]
+}
+"61
+[v _FF_Read `(E5 ~T0 @X0 1 ef1`*E1 ]
+{
+[; ;pulse.c: 61: result_t FF_Read(state_t* x){
+[e :U _FF_Read ]
+[v _x `*E1 ~T0 @X0 1 r1 ]
+[f ]
+"63
+[v _in `ui ~T0 @X0 1 a ]
+[v _out `ui ~T0 @X0 1 a ]
+[; ;pulse.c: 63: uint16_t in, out;
+[; ;pulse.c: 65: in = (FIFO.iByte<<3) + FIFO.iBit;
+"65
+[e = _in -> + << -> . _FIFO 0 `i -> 3 `i -> . _FIFO 1 `i `ui ]
+[; ;pulse.c: 66: out = (FIFO.oByte<<3) + FIFO.oBit;
+"66
+[e = _out -> + << -> . _FIFO 2 `i -> 3 `i -> . _FIFO 3 `i `ui ]
+[; ;pulse.c: 68: if(in == out){
+"68
+[e $ ! == _in _out 10  ]
+{
+[; ;pulse.c: 70: return FAILED;
+"70
+[e ) . `E5 0 ]
+[e $UE 9  ]
+"71
+}
+[; ;pulse.c: 71: }
+[e $U 11  ]
+"72
+[e :U 10 ]
+[; ;pulse.c: 72: else{
+{
+[; ;pulse.c: 74: *x = (state_t)((FIFO.buff[FIFO.oByte]>>(FIFO.oBit)) & 0x1);
+"74
+[e = *U _x -> & >> -> *U + &U . _FIFO 4 * -> . _FIFO 2 `ux -> -> # *U &U . _FIFO 4 `ui `ux `i . _FIFO 3 -> 1 `i `E1 ]
+[; ;pulse.c: 76: FIFO.oBit++;
+"76
+[e ++ . _FIFO 3 -> -> 1 `i `uc ]
+[; ;pulse.c: 77: if(FIFO.oBit==8){
+"77
+[e $ ! == -> . _FIFO 3 `i -> 8 `i 12  ]
+{
+[; ;pulse.c: 79: FIFO.oBit = 0;
+"79
+[e = . _FIFO 3 -> -> 0 `i `uc ]
+[; ;pulse.c: 80: FIFO.oByte++;
+"80
+[e ++ . _FIFO 2 -> -> 1 `i `uc ]
+[; ;pulse.c: 82: if(FIFO.oByte==((160)>>3)){
+"82
+[e $ ! == -> . _FIFO 2 `i >> -> 160 `i -> 3 `i 13  ]
+{
+[; ;pulse.c: 83: FIFO.oByte = 0;
+"83
+[e = . _FIFO 2 -> -> 0 `i `uc ]
+"84
+}
+[e :U 13 ]
+"85
+}
+[e :U 12 ]
+[; ;pulse.c: 84: }
+[; ;pulse.c: 85: }
+[; ;pulse.c: 87: return SUCCEED;
+"87
+[e ) . `E5 1 ]
+[e $UE 9  ]
+"88
+}
+[e :U 11 ]
+[; ;pulse.c: 88: }
+[; ;pulse.c: 89: }
+"89
+[e :UE 9 ]
+}

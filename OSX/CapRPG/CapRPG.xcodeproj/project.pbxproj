@@ -1,0 +1,335 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		64338DC61E3872EA007040BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64338DC31E3872EA007040BD /* AppDelegate.swift */; };
+		64338DC71E3872EA007040BD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64338DC41E3872EA007040BD /* Info.plist */; };
+		64338DC81E3872EA007040BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64338DC51E3872EA007040BD /* ViewController.swift */; };
+		64338DCC1E38731D007040BD /* interior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64338DC91E38731D007040BD /* interior.jpg */; };
+		64338DCD1E38731D007040BD /* lab.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64338DCA1E38731D007040BD /* lab.jpg */; };
+		64338DCE1E38731D007040BD /* welcome.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64338DCB1E38731D007040BD /* welcome.jpg */; };
+		64338DCF1E387344007040BD /* Midas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64338DC21E387254007040BD /* Midas.framework */; };
+		64338DD11E387436007040BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64338DD01E387436007040BD /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		64338DC11E387254007040BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64338DBD1E387253007040BD /* Midas.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 64338D951E3871F2007040BD;
+			remoteInfo = Midas;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		64338DAB1E387235007040BD /* CapRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64338DBD1E387253007040BD /* Midas.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Midas.xcodeproj; path = ../Midas/Midas.xcodeproj; sourceTree = "<group>"; };
+		64338DC31E3872EA007040BD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		64338DC41E3872EA007040BD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64338DC51E3872EA007040BD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		64338DC91E38731D007040BD /* interior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = interior.jpg; sourceTree = "<group>"; };
+		64338DCA1E38731D007040BD /* lab.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lab.jpg; sourceTree = "<group>"; };
+		64338DCB1E38731D007040BD /* welcome.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = welcome.jpg; sourceTree = "<group>"; };
+		64338DD01E387436007040BD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64338DA81E387235007040BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64338DCF1E387344007040BD /* Midas.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64338DA21E387235007040BD = {
+			isa = PBXGroup;
+			children = (
+				64338DBD1E387253007040BD /* Midas.xcodeproj */,
+				64338DAD1E387235007040BD /* CapRPG */,
+				64338DAC1E387235007040BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		64338DAC1E387235007040BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64338DAB1E387235007040BD /* CapRPG.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64338DAD1E387235007040BD /* CapRPG */ = {
+			isa = PBXGroup;
+			children = (
+				64338DD01E387436007040BD /* Main.storyboard */,
+				64338DC91E38731D007040BD /* interior.jpg */,
+				64338DCA1E38731D007040BD /* lab.jpg */,
+				64338DCB1E38731D007040BD /* welcome.jpg */,
+				64338DC31E3872EA007040BD /* AppDelegate.swift */,
+				64338DC41E3872EA007040BD /* Info.plist */,
+				64338DC51E3872EA007040BD /* ViewController.swift */,
+			);
+			path = CapRPG;
+			sourceTree = "<group>";
+		};
+		64338DBE1E387253007040BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64338DC21E387254007040BD /* Midas.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64338DAA1E387235007040BD /* CapRPG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64338DBA1E387235007040BD /* Build configuration list for PBXNativeTarget "CapRPG" */;
+			buildPhases = (
+				64338DA71E387235007040BD /* Sources */,
+				64338DA81E387235007040BD /* Frameworks */,
+				64338DA91E387235007040BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CapRPG;
+			productName = CapRPG;
+			productReference = 64338DAB1E387235007040BD /* CapRPG.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64338DA31E387235007040BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Ed Salisbury";
+				TargetAttributes = {
+					64338DAA1E387235007040BD = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 64338DA61E387235007040BD /* Build configuration list for PBXProject "CapRPG" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 64338DA21E387235007040BD;
+			productRefGroup = 64338DAC1E387235007040BD /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 64338DBE1E387253007040BD /* Products */;
+					ProjectRef = 64338DBD1E387253007040BD /* Midas.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				64338DAA1E387235007040BD /* CapRPG */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		64338DC21E387254007040BD /* Midas.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Midas.framework;
+			remoteRef = 64338DC11E387254007040BD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64338DA91E387235007040BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64338DCD1E38731D007040BD /* lab.jpg in Resources */,
+				64338DD11E387436007040BD /* Main.storyboard in Resources */,
+				64338DC71E3872EA007040BD /* Info.plist in Resources */,
+				64338DCE1E38731D007040BD /* welcome.jpg in Resources */,
+				64338DCC1E38731D007040BD /* interior.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64338DA71E387235007040BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64338DC81E3872EA007040BD /* ViewController.swift in Sources */,
+				64338DC61E3872EA007040BD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		64338DB81E387235007040BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		64338DB91E387235007040BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		64338DBB1E387235007040BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CapRPG/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.salisbury.CapRPG;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		64338DBC1E387235007040BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CapRPG/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.salisbury.CapRPG;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64338DA61E387235007040BD /* Build configuration list for PBXProject "CapRPG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64338DB81E387235007040BD /* Debug */,
+				64338DB91E387235007040BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64338DBA1E387235007040BD /* Build configuration list for PBXNativeTarget "CapRPG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64338DBB1E387235007040BD /* Debug */,
+				64338DBC1E387235007040BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64338DA31E387235007040BD /* Project object */;
+}
